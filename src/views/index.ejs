@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Hábitos Alimentares</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Container do vídeo -->
+        <div class="video-container">
+            <iframe 
+                width="100%" 
+                height="315" 
+                src="https://www.youtube.com/embed/UfetzdOcHls" 
+                title="Vídeo do YouTube" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Details com a receita de sal de ervas -->
+        <details class="recipe">
+            <summary>Receita de Sal de Ervas</summary>
+            <p>
+                <strong>Ingredientes:</strong><br>
+                - 1 xícara de sal grosso ou sal marinho<br>
+                - 2 colheres de sopa de alecrim seco<br>
+                - 2 colheres de sopa de manjericão seco<br>
+                - 1 colher de sopa de orégano seco<br>
+                - 1 colher de chá de tomilho seco<br>
+                - 1 colher de chá de pimenta-do-reino (opcional)<br><br>
+                <strong>Modo de Preparo:</strong><br>
+                1. Triture as ervas secas em um pilão ou processador até virarem um pó fino.<br>
+                2. Misture bem o sal com as ervas trituradas.<br>
+                3. Armazene em um pote de vidro com tampa hermética.<br>
+                4. Use para temperar carnes, vegetais ou qualquer prato!<br>
+            </p>
+        </details>
+
+        <!-- Formulário -->
+        <h1>Formulário de Hábitos Alimentares</h1>
+        <form id="habitos-form" action="/submit" method="POST">
+            <!-- Novos campos: Nome e E-mail -->
+            <div class="personal-info">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="question">
+                <p>1. Com que frequência você consome frutas e vegetais no dia a dia?</p>
+                <label><input type="radio" name="q1" value="raramente" required> 🔴 Raramente</label>
+                <label><input type="radio" name="q1" value="1x"> 🟡 1 vez ao dia</label>
+                <label><input type="radio" name="q1" value="2-3x"> 🟢 2 a 3 vezes ao dia</label>
+                <label><input type="radio" name="q1" value="mais-3x"> 🟢 Mais de 3 vezes ao dia</label>
+            </div>
+
+            <div class="question">
+                <p>2. Qual dessas opções descreve melhor sua rotina alimentar?</p>
+                <label><input type="radio" name="q2" value="irregular" required> 🔴 Como em horários irregulares e muitas vezes pulo refeições</label>
+                <label><input type="radio" name="q2" value="tento"> 🟡 Tento seguir horários, mas nem sempre consigo</label>
+                <label><input type="radio" name="q2" value="fixos"> 🟢 Tenho horários fixos e planejo minhas refeições</label>
+            </div>
+
+            <div class="question">
+                <p>3. Quando sente fome, qual é sua primeira opção?</p>
+                <label><input type="radio" name="q3" value="doces" required> 🔴 Doces, salgadinhos ou fast food</label>
+                <label><input type="radio" name="q3" value="pratico"> 🟡 Algo prático, como um pão ou biscoito</label>
+                <label><input type="radio" name="q3" value="equilibrado"> 🟢 Uma fruta, castanhas ou um lanche mais equilibrado</label>
+            </div>
+
+            <div class="question">
+                <p>4. Você costuma se hidratar bem ao longo do dia?</p>
+                <label><input type="radio" name="q4" value="raramente" required> 🔴 Raramente bebo água, esqueço fácil</label>
+                <label><input type="radio" name="q4" value="as-vezes"> 🟡 Bebo água às vezes, mas poderia melhorar</label>
+                <label><input type="radio" name="q4" value="sempre"> 🟢 Sempre me hidrato bem e levo uma garrafinha comigo</label>
+            </div>
+
+            <div class="question">
+                <p>5. Como você se sente depois de comer?</p>
+                <label><input type="radio" name="q5" value="inchado" required> 🔴 Inchado, pesado ou com desconforto</label>
+                <label><input type="radio" name="q5" value="normal"> 🟡 Normal, mas às vezes sinto fadiga</label>
+                <label><input type="radio" name="q5" value="leve"> 🟢 Leve e com energia para continuar o dia</label>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
