@@ -78,32 +78,23 @@ router.post("/submit", async (req, res) => {
     };
 
     const emailBody = `
-    <div style="font-family: Arial, sans-serif; background-color: #fff0f5; padding: 20px; border-radius: 15px; max-width: 600px; margin: auto;">
-        <h2 style="color: #ff69b4; text-align: center; font-family: 'Comic Sans MS', cursive;">🌸 Resultado do Formulário de Hábitos Alimentares 🌸</h2>
-        <p style="color: #ff85c2; font-size: 16px;"><strong>💕 Nome:</strong> ${nome}</p>
-        <p style="color: #ff85c2; font-size: 16px;"><strong>✨ E-mail:</strong> ${email}</p>
-        <p style="color: #ff85c2; font-size: 16px;"><strong>🌟 Pontuação Total:</strong> ${total} pontos (máximo: 15)</p>
-        <h3 style="color: #ff69b4; font-family: 'Comic Sans MS', cursive; text-align: center;">🍓 Suas Respostas 🍓</h3>
-        <ul style="list-style-type: none; padding: 0;">
-            <li style="background-color: #ffe6f0; margin: 10px 0; padding: 10px; border-radius: 10px; color: #ff6f9c;">
-                <strong>🍎 1. Frutas e Vegetais:</strong> ${respostasTexto.q1[q1]} <span style="color: #ff1493;">(${respostasComPontos.q1.pontos} pontos)</span>
-            </li>
-            <li style="background-color: #ffe6f0; margin: 10px 0; padding: 10px; border-radius: 10px; color: #ff6f9c;">
-                <strong>⏰ 2. Rotina Alimentar:</strong> ${respostasTexto.q2[q2]} <span style="color: #ff1493;">(${respostasComPontos.q2.pontos} pontos)</span>
-            </li>
-            <li style="background-color: #ffe6f0; margin: 10px 0; padding: 10px; border-radius: 10px; color: #ff6f9c;">
-                <strong>🍫 3. Opção ao Sentir Fome:</strong> ${respostasTexto.q3[q3]} <span style="color: #ff1493;">(${respostasComPontos.q3.pontos} pontos)</span>
-            </li>
-            <li style="background-color: #ffe6f0; margin: 10px 0; padding: 10px; border-radius: 10px; color: #ff6f9c;">
-                <strong>💧 4. Hidratação:</strong> ${respostasTexto.q4[q4]} <span style="color: #ff1493;">(${respostasComPontos.q4.pontos} pontos)</span>
-            </li>
-            <li style="background-color: #ffe6f0; margin: 10px 0; padding: 10px; border-radius: 10px; color: #ff6f9c;">
-                <strong>🌈 5. Sensação Após Comer:</strong> ${respostasTexto.q5[q5]} <span style="color: #ff1493;">(${respostasComPontos.q5.pontos} pontos)</span>
-            </li>
+    <div>
+        <h2>Resultado do Formulário de Hábitos Alimentares</h2>
+        <p><strong>Nome:</strong> ${nome}</p>
+        <p><strong>E-mail:</strong> ${email}</p>
+        <p><strong>Pontuação Total:</strong> ${total} pontos (máximo: 15)</p>
+        <h3>Suas Respostas</h3>
+        <ul>
+            <li><strong>1. Frutas e Vegetais:</strong> ${respostasTexto.q1[q1]} (${respostasComPontos.q1.pontos} pontos)</li>
+            <li><strong>2. Rotina Alimentar:</strong> ${respostasTexto.q2[q2]} (${respostasComPontos.q2.pontos} pontos)</li>
+            <li><strong>3. Opção ao Sentir Fome:</strong> ${respostasTexto.q3[q3]} (${respostasComPontos.q3.pontos} pontos)</li>
+            <li><strong>4. Hidratação:</strong> ${respostasTexto.q4[q4]} (${respostasComPontos.q4.pontos} pontos)</li>
+            <li><strong>5. Sensação Após Comer:</strong> ${respostasTexto.q5[q5]} (${respostasComPontos.q5.pontos} pontos)</li>
         </ul>
-        <p style="text-align: center; color: #ff69b4; font-size: 14px;">💖 Feito com carinho para você! 💖</p>
+        <p>Feito com carinho para você!</p>
     </div>
 `;
+
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
